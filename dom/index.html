@@ -6,16 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-
     <div>
         <p>CalculateSum </p>
         <input type="number" id="inp1">
         <input type="number" id="inp2">
         <button onclick="CalculateSum()">Calculate</button>
-
         <p id="result"></p>
     </div>
-
     <div>
         <p>Calculate interest</p>
         <label for="principal">principal</label>
@@ -24,15 +21,20 @@
         <input type="text" id="rate">
         <label for="time">Time</label>
         <input type="text" id="time">
-
         <button onclick="CalculateInterest()">CalculateInterest</button>
-
         <p id="interestresult"></p>
+
+        <button onclick="incrementCounter()" id="btn">Click me </button>
     </div>
-
-    
-
     <script>
+    let value = 0 
+        function incrementCounter(){
+            const btn = document.getElementById("btn")
+            value = value + 1
+            btn.innerText = `Click me ${value}`
+            
+        }
+
         async function CalculateSum(){
             const inputone = document.getElementById("inp1").value
             const inputtwo = document.getElementById("inp2").value
@@ -57,7 +59,6 @@
 
             document.getElementById('interestresult').innerText = `Total : ${data.totalAmount} Interest: ${data.interest}`
         }
-
     </script>
     
 </body>
